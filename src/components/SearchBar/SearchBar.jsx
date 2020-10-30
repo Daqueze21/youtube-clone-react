@@ -1,11 +1,10 @@
 import React from 'react';
-import styles from './SearchBar.module.scss';
+// import styles from './SearchBar.module.scss';
 import { Paper, TextField } from '@material-ui/core';
 
 class SearchBar extends React.Component {
    state = {
       searchTerm: '',
-      value: 1
    };
 
    handleChange = e => {
@@ -14,23 +13,23 @@ class SearchBar extends React.Component {
 
    handleSubmit = e => {
       e.preventDefault();
-      const {searchTerm, value} = this.state;
+      const {searchTerm} = this.state;
       const { onFormSubmit } = this.props;
       onFormSubmit(searchTerm);
    };
 
    render() {
       return (
-         <Paper style={{ padding: '25px' }}>
-         <form onSubmit={this.handleSubmit}>
+        <Paper style={{ padding: '25px' }} elevation={6}>
+          <form onSubmit={this.handleSubmit}>
             <TextField
-               fullWidth
-               variant='outlined'
-               label='Search ...'
-               onChange={this.handleChange}
+              fullWidth
+              variant='outlined'
+              label='Search ...'
+              onChange={this.handleChange}
             />
-         </form>
-         </Paper>
+          </form>
+        </Paper>
       );
    }
 }
