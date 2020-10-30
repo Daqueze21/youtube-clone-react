@@ -5,7 +5,6 @@ export default axios.create({
    params: {
       parts: 'snippets',
       maxResults: 5,
-      
    }
-}); 
+});
 
