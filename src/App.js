@@ -5,17 +5,18 @@ import youtube from './api/youtube';
 import { SearchBar, Video, VideoList, } from './components';
 
 class App extends React.Component {
-  logYoutube () {
-    console.log('obj', youtube);
-  }
-  
+  onFormSubmit = (searchTerm) => {
+    // const response = await youtube.get(searchTerm);
+    
+  };
+
   render() {
     return (
       <Grid container spacing={10}>
         <Grid item xs={12}>
           <Grid container spacing={10}>
-            <Grid item xs={12}>
-              <SearchBar />
+            <Grid elevation={6} item xs={12}>
+              <SearchBar onFormSubmit={this.onFormSubmit} />
             </Grid>
             <Grid item xs={8}>
               <Video />
